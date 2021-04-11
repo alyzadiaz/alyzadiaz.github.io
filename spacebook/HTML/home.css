@@ -10,20 +10,27 @@
 }
 
 body {
-    background-color: #9CAFB7;
+    background-color: #000000;
+}
+
+#navigation{
+    padding-top:20px;
+}
+
+#logo{
+    height: 50px;
+    padding: 5px;
 }
 
 #body-container {
-    width: fit-content;
-    height: 450px;
-    background-color: lightslategrey;
-    -webkit-box-shadow: 5px 5px 15px 5px #656565; 
-    box-shadow: 5px 5px 15px 5px #656565;   
+    width: 100%;
+    background-color: lightslategrey;   
 }
 
-img {
-    width: 400px;
-    padding: 20px;
+#body-container img {
+    float: left;
+    height: 495px;
+    object-fit: cover;
 }
 
 #container{
@@ -31,10 +38,32 @@ img {
     border-width: 2px;
 }
 
+#Starlink {
+    background-image:url("../RESOURCES/Starlink.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 80px;
+    width: 80px;
+    left: 390px;
+    position:absolute;
+    top:325px;
+}
+
+#Roadster {
+    background-image:url("../RESOURCES/Roadster.png");
+    background-repeat: no-repeat;
+    background-size: 80px;
+    height: 80px;
+    width: 80px;
+    left: 100px;
+    position:absolute;
+    top:375px;
+}
+
 #panels {
     display: flex;
     justify-content: space-between;
-    padding: 2em;
+    padding-top: 2em;
 }
 
 ul {
@@ -69,4 +98,28 @@ ul input[type = text]{
     margin: 6px;
     border: none;
     border-radius: 30px;
+}
+
+.S_animate {
+    position: absolute;
+    left: 315px;
+    top: 350px;
+    animation: myOrbit 10s linear infinite;
+}
+
+@keyframes myOrbit {
+    from { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+}
+
+.R_animate {
+    position: absolute;
+    left: 315px;
+    top: 350px;
+    animation: myOrbit2 15s linear infinite;
+}
+
+@keyframes myOrbit2 {
+    from { 	transform: rotate(0deg) translateX(200px); }
+	to   {  transform: rotate(360deg) translateX(200px); }
 }
