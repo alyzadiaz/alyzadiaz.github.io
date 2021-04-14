@@ -12,6 +12,9 @@
 .title{
     padding: 10px;
     text-align: center;
+    font-family: 'southern_aire';
+    font-size: 50px;
+    color:black;
 }
 
 ul{
@@ -19,7 +22,17 @@ ul{
     text-align: center;
 }
 
+li{
+    padding: 20px;
+}
+
 body{
     background-color: #8EC5FC;
     background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    font-family: 'Open Sans', sans-serif;
+}
+
+@font-face {
+    font-family: 'southern_aire';
+    src: url(resources/SouthernAire.ttf);
 }
