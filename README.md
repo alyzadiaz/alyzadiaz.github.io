@@ -1,1 +1,1 @@
-# [LIVE VIEW](https://www.alyzadiaz.github.io)
+# [LIVE VIEW](https://alyzadiaz.github.io/)
