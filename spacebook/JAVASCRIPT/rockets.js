@@ -1,3 +1,15 @@
+///////////////////////////////////////////////////////////////////////////////
+//                   
+// Title:       Spacebook
+// Files:       rockets.html, rockets.css
+// Semester:    Software Engineering - Spring 2021
+//
+// Author:      Alyza Diaz Rodriguez, Danielle Shackley
+// Email:       diazrodrigueza@wit.edu, shackleyd@wit.edu
+//
+////////////////////////////////////////////////////////////////////////////
+
+//Setting up API call and mission id's 
 const api = "https://api.spacexdata.com/v3/rockets/";
 const ids = ["falcon1","falcon9","falconheavy","starship"];
 
@@ -5,30 +17,9 @@ window.onload = function() {
     for(var i=0;i<ids.length;i++){
         insertRocket(api.concat(ids[i]));
     }
-
-
-//search button
-var searchBtn = document.getElementById("search_button");
-var search = document.getElementById("search");
-
-searchBtn.addEventListener("click", function(){
-    var name = search.value;
-    var goTo = document.getElementById(name);
-    //goTo.scrollIntoView({ block: 'center' });
-    
-    highlight(goTo);
-    
-    function highlight(goTo){
-       var orig = goTo.style.backgroundColor;
-       goTo.style.backgroundColor = "blue";
-       setTimeout(function(){
-            goTo.style.backgroundColor = orig;
-       }, 2500);
-    }
-});
-
 }
 
+//Function to pull details from API
 function insertRocket(api){
     fetch(api)
         .then(response => response.json())
@@ -105,45 +96,8 @@ function formatNumber(num) {
 
 function formatDate(string){
     var components = string.split('-');
+    var monthList = ["January", "February", "March", "April", "May", "June", "July", "August", "September","October", "November", "December"];
+    components[1] = monthList[parseInt(components[1],10)-1];
 
-    switch(components[1]){
-        case "01":
-            components[1] = "January";
-            break;
-        case "02":
-            components[1] = "February";
-            break;
-        case "03":
-            components[1] = "March";
-            break;
-        case "04":
-            components[1] = "April";
-            break; 
-        case "05":
-            components[1] = "May";
-            break;
-        case "06":
-            components[1] = "June";
-            break;
-        case "07":
-            components[1] = "July";
-            break;
-        case "08":
-            components[1] = "August";
-            break;
-        case "09":
-            components[1] = "September";
-            break;
-        case "10":
-            components[1] = "October";
-            break;
-        case "11":
-            components[1] = "November";
-            break;
-        case "12":
-            components[1] = "December";
-            break;    
-    }
-    
     return components[1]+" "+components[2]+", "+components[0];
 }
